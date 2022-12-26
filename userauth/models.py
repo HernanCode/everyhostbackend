@@ -10,16 +10,17 @@ from django.db import models
 
 
 class Users(models.Model):
-    fullname = models.CharField()
-    password = models.CharField()
+    fullname = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
     email = models.EmailField()
-    docker = models.ForeignKey('Perfil', on_delete=models.CASCADE)
+    docker = models.ForeignKey('Docker', on_delete=models.CASCADE)
+
+
+class Web(models.Model):
+    path = models.CharField(max_length=100)
 
 class Docker(models.Model):
     web = models.ForeignKey('Web', on_delete=models.CASCADE)
-    software = models.CharField()
-    subdomain = models.CharField()
-    port = models.IntegerField(max_length=5)
-
-class Web(models.Model):
-    path = models.CharField()
+    software = models.CharField(max_length=100)
+    subdomain = models.CharField(max_length=100)
+    port = models.IntegerField()

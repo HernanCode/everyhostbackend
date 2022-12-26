@@ -30,24 +30,27 @@
     </header>
     <section>
         <div class="user-details">
-            <form action="index.html">
+            <form method="post">
+                {% csrf_token %}
                 <h5>Inicia sesión</h5>
                 <div class="input-box">
-                    <span class="details">Email</span>
-                    <input type="email" placeholder="Introduce tu email" required>
+                    <span class="details">Nombre de usuario</span>
+                    <input type="text" name="username" required >
                 </div>
                 <div class="input-box">
                     <span class="details">Contraseña</span>
-                    <input type="password" placeholder="Introduce una contraseña" required>
+                    <input type="password" name="password" required >
                 </div>
 
                 <div class="input-box">
-                    <button type="submit" class="registerbtn">Register</button>
+                    <button type="submit" class="registerbtn">Entrar</button>
                 </div>
                 <div class="account-box">
-                    <p>¿Aún no tienes una cuenta? <a href="signup">Registrate</a>.</p>
+                    <p>¿Aún no tienes una cuenta? <a href="signup.html">Registrate</a>.</p>
                 </div>
-
+                {% for message in messages %}
+                    <div id="messages">{{message}}</div></p>
+                {%endfor%}
             </form>
         </div>
 
@@ -55,3 +58,4 @@
 </body>
 
 </html>
+

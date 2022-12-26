@@ -29,26 +29,15 @@
     </header>
     <section>
         <div class="user-details">
-            <form action="index.html">
+            <form class="form" method="post">
                 <h5>Registro</h5>
-                <div class="input-box">
-                    <span class="details">Nombre completo</span>
-                    <input type="text" placeholder="Introduce tu nombre y apellidos" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Email</span>
-                    <input type="email" placeholder="Introduce tu email" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Contraseña</span>
-                    <input type="password" placeholder="Introduce una contraseña" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Confirma contraseña</span>
-                    <input type="text" placeholder="Vuelve a introducir la contraseña" required>
-                </div>
-                <div class>
-                </div>
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="input-box">
+                        <span class="details">{{field.label}}</span>
+                        {{field}}
+                    </div>
+                {% endfor %}
                 <div class="input-box">
                     <button type="submit" class="registerbtn">Register</button>
                 </div>
