@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="{% static 'auth/css/style.css' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="{% static 'auth/img/headicon.png' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../"><img src="{% static 'auth/img/logo.png' %}" alt=""></a>
+            </div>
+            <div class="nav-items">
+                <a href="#">About Us </a>
+                <a href="login">Login</a>
+                <a href="signup">Signup</a>
+            </div>
+
+        </nav>
+    </header>
+    <section>
+        <div class="user-details">
+            <form action="index.html">
+                <h5>Registro</h5>
+                <div class="input-box">
+                    <span class="details">Nombre completo</span>
+                    <input type="text" placeholder="Introduce tu nombre y apellidos" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" placeholder="Introduce tu email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Contraseña</span>
+                    <input type="password" placeholder="Introduce una contraseña" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirma contraseña</span>
+                    <input type="text" placeholder="Vuelve a introducir la contraseña" required>
+                </div>
+                <div class>
+                </div>
+                <div class="input-box">
+                    <button type="submit" class="registerbtn">Register</button>
+                </div>
+                <div class="account-box">
+                    <p>¿Ya tienes una cuenta? <a href="login">Inicia sesión</a>.</p>
+                </div>
+
+            </form>
+
+
+
+        </div>
+
+    </section>
+</body>
+
+</html>

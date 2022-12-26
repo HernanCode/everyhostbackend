@@ -1,0 +1,218 @@
+/*Estilo de toda la página sin bordes ni margenes*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*Estílo del html, tamaños en em y letra poppins*/
+
+html {
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*Enlaces sin decoración*/
+
+a {
+    text-decoration: none;
+}
+
+
+/*Encabezado*/
+
+header {
+    display: flex;
+}
+
+nav {
+    font-size: 0.6em;
+    background-color: rgb(3, 83, 194);
+    padding: 0 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7em;
+    position: fixed;
+    transition: all 0.5s;
+    z-index: 1000;
+}
+
+nav img {
+    height: 30px;
+    opacity: 1;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    font-size: 1.7em;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 900;
+}
+
+.nav-items a:hover {
+    color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    background-color: rgb(0, 105, 255);
+    border-radius: 5px;
+}
+
+
+/*Clase extra al hacer scroll*/
+
+nav.sticky {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+nav.sticky a {
+    color: rgb(36, 51, 90);
+    height: 30px;
+}
+
+nav.sticky a:hover {
+    color: rgb(255, 255, 255);
+    transition: all 0.4s;
+    background-color: rgb(0, 105, 255);
+    border-radius: 5px;
+    box-shadow: rgba(87, 87, 87, 0.4) 0px 5px;
+}
+
+nav img.sticky {
+    height: 30px;
+    opacity: 1;
+}
+
+
+/*Media query para eliminar nubes y otros efectos*/
+
+@media screen and (max-width: 800px) {
+    .nav-items {
+        display: none;
+    }
+    .leftcloud {
+        display: none;
+    }
+    .rightcloud {
+        display: none;
+    }
+}
+
+@media screen and (min-width:801px) {
+    .links {
+        display: none;
+    }
+}
+
+@media screen and (max-width:500px) {
+    /*Mobile version*/
+    nav img {
+        height: 20px;
+    }
+    .info {
+        font-size: 2.5em;
+    }
+    html {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .links {
+        display: flex;
+        flex-direction: column;
+    }
+    .links a {
+        margin-top: 6px;
+    }
+}
+
+.col-cn {
+    color: white;
+    background-color: rgb(0, 105, 255);
+    border-radius: 0px 0px 6px 6px;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    text-align: center;
+}
+
+.info {
+    font-size: 2em;
+    margin-top: 100px;
+    font-family: 'Epilogue';
+    flex: 1;
+    text-align: center;
+}
+
+.row-cn {
+    justify-content: space-evenly;
+    flex: 1;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.m-10 {
+    margin-top: 10px;
+}
+
+.colinfo {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 7px 5px;
+    max-width: 300px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(36, 51, 90);
+    font-size: 1.3em;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: 'Epilogue';
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+.info h4 {
+    font-size: 1em;
+}
+
+.info p {
+    margin-top: 50px;
+    position: relative;
+    flex: 1;
+    font-size: 0.7em;
+    font-weight: 800;
+    text-align: center;
+}
+
+#imgblue {
+    display: none;
+}
+
+.links {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.links a {
+    background-color: white;
+    border-radius: 5px;
+    color: rgb(36, 51, 90);
+    font-size: 1em;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 900;
+    box-shadow: rgba(87, 87, 87, 0.4) 0px 5px;
+}
+
+.links a:hover {
+    background-color: #dee3ed;
+    box-shadow: rgba(87, 87, 87, 0.4) 0px 5px;
+}

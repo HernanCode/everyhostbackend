@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EveryHost</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/c8a739af4d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
+    <script src="{% static 'home/js/scroll.js' %}"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'home/img/headicon.png' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'home/img/logo.png' %}" alt="" id="imgblue">
+                <img src="{% static 'home/img/logowhite.png' %}" alt="" id="imgwhite">
+            </div>
+            <div class="nav-items">
+                <a href="#">Sobre nosotros</a>
+                <a href="auth/login">Iniciar sesión</a>
+                <a href="auth/signup" id="signup">Registrarse</a>
+            </div>
+        </nav>
+    </header>
+    <div class="col-cn">
+        <div class="row-cn">
+            <div class="leftcloud">
+                <img src="{% static 'img/minicloudleft.svg' %}" alt="">
+            </div>
+            <div class="info">
+                <h4 class="write-text" data-text="Nunca ha sido tan fácil lanzar tu página web. Con EveryHost nada es complicado"></h4>
+                <p class="write-text" data-text="Crea una cuenta y pon en marcha tu proyecto hoy mismo"></p>
+                <script src="{% static 'js/writter.js' %}"></script>
+            </div>
+            <div class="rightcloud">
+                <img src="{% static 'img/minicloudright.svg' %}" alt="">
+            </div>
+        </div>
+        <div class="links">
+            <a href="auth/login"><i class="fa-solid fa-user"></i>Iniciar sesión</a>
+            <a href="auth/signup"><i class="fa-solid fa-user-plus"></i>Registrarse</a>
+        </div>
+        <div class="row-cn">
+            <div class="colinfo">
+                <img src="https://external-preview.redd.it/R7zYlNP-6eGdLbNx68q7JNBdeAG6PO7BKYd-oXCQSPA.jpg?auto=webp&s=fedea0b9f5bfd0ffef3ee4f019d76542d1eb1449" alt="" height="100px">
+                <p>Servicio de Hosting</p>
+            </div>
+            <div class="colinfo">
+                <img src="https://external-preview.redd.it/R7zYlNP-6eGdLbNx68q7JNBdeAG6PO7BKYd-oXCQSPA.jpg?auto=webp&s=fedea0b9f5bfd0ffef3ee4f019d76542d1eb1449" alt="" height="100px">
+                <p>Servicio de Hosting</p>
+            </div>
+            <div class="colinfo">
+                <img src="https://external-preview.redd.it/R7zYlNP-6eGdLbNx68q7JNBdeAG6PO7BKYd-oXCQSPA.jpg?auto=webp&s=fedea0b9f5bfd0ffef3ee4f019d76542d1eb1449" alt="" height="100px">
+                <p>Servicio de Hosting</p>
+            </div>
+        </div>
+        <h2>Disfruta con nuestros cursos</h2>
+        <div class="row-cn m-10">
+            <div class="colinfo">
+                <img src="https://external-preview.redd.it/R7zYlNP-6eGdLbNx68q7JNBdeAG6PO7BKYd-oXCQSPA.jpg?auto=webp&s=fedea0b9f5bfd0ffef3ee4f019d76542d1eb1449" alt="" height="100px">
+                <p>Servicio de Hosting</p>
+            </div>
+            <div class="colinfo">
+                <img src="https://external-preview.redd.it/R7zYlNP-6eGdLbNx68q7JNBdeAG6PO7BKYd-oXCQSPA.jpg?auto=webp&s=fedea0b9f5bfd0ffef3ee4f019d76542d1eb1449" alt="" height="100px">
+                <p>Servicio de Hosting</p>
+            </div>
+            <div class="colinfo">
+                <img src="https://external-preview.redd.it/R7zYlNP-6eGdLbNx68q7JNBdeAG6PO7BKYd-oXCQSPA.jpg?auto=webp&s=fedea0b9f5bfd0ffef3ee4f019d76542d1eb1449" alt="" height="100px">
+                <p>Servicio de Hosting</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+</body>
+
+</html>
