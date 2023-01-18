@@ -41,9 +41,13 @@
                 <div class="input-box">
                     <button type="submit" class="registerbtn">Register</button>
                 </div>
+                
                 <div class="account-box">
                     <p>¿Ya tienes una cuenta? <a href="login">Inicia sesión</a>.</p>
                 </div>
+                {% for message in messages %}
+                    <div id="error">{{message}}</div></p>
+                {% endfor %}
 
             </form>
 

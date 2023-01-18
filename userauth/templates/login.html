@@ -23,7 +23,7 @@
                 <a href="#">About Us </a>
                 <a href="login">Login</a>
                 <a href="signup">Signup</a>
-                <!----<a href="#"><i class="fa fa-search"></i></a>-->
+                <!---<a href="#"><i class="fa fa-search"></i></a>-->
             </div>
 
         </nav>
@@ -46,11 +46,11 @@
                     <button type="submit" class="registerbtn">Entrar</button>
                 </div>
                 <div class="account-box">
-                    <p>¿Aún no tienes una cuenta? <a href="signup.html">Registrate</a>.</p>
+                    <p>¿Aún no tienes una cuenta? <a href="signup">Registrate</a>.</p>
                 </div>
                 {% for message in messages %}
                     <div id="messages">{{message}}</div></p>
-                {%endfor%}
+                {% endfor %}
             </form>
         </div>
 

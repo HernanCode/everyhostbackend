@@ -195,3 +195,14 @@ section {
     text-align: center;
     padding: 10px;
 }
+
+#error{
+    font-size: 67%;
+    background-color: rgb(248, 0, 0);
+    border-radius: 5px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+
+}
