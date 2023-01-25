@@ -6,26 +6,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Everyhost - Log in </title>
     <link rel="stylesheet" href="{% static 'auth/css/style.css' %}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
-    <link rel="icon" type="image/x-icon" href="{% static 'auth/img/headicon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/headicon.png' %}">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="../"><img src="{% static 'auth/img/logo.png' %}" alt=""></a>
+                <a href="../"><img src="{% static 'img/logo.png' %}" alt="" id="imgblue"></a>
+                <a href="../"><img src="{% static 'img/logowhite.png' %}" alt="" id="imgwhite"></a>
             </div>
             <div class="nav-items">
-                <a href="#">About Us </a>
-                <a href="login">Login</a>
-                <a href="signup">Signup</a>
-                <!---<a href="#"><i class="fa fa-search"></i></a>-->
+                <a href="login">Log in</a>
+                <a href="signup" id="signup">Sign up</a>
             </div>
-
         </nav>
     </header>
     <section>
@@ -52,10 +50,15 @@
                     <div id="messages">{{message}}</div></p>
                 {% endfor %}
             </form>
+            <script>
+                //Field Placeholder to use with DJANGO
+                var form_fields = document.getElementsByTagName('input')
+                form_fields[1].placeholder = "Introduce your username";
+                form_fields[2].placeholder = "Introduce your password";
+            </script>
         </div>
 
     </section>
 </body>
 
 </html>
-

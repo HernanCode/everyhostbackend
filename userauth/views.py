@@ -8,7 +8,15 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
 
+
+
 # Create your views here.
+def home(request):
+    return render(request,'home.html')
+
+
+def bar(request):
+    return render(request,'bar.html')
 
 def loginPage(request):
     if request.user.is_authenticated:
