@@ -6,31 +6,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
+    <title>Everyhost - Sign up </title>
     <link rel="stylesheet" href="{% static 'auth/css/style.css' %}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
-    <link rel="icon" type="image/x-icon" href="{% static 'auth/img/headicon.png' %}">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="../"><img src="{% static 'auth/img/logo.png' %}" alt=""></a>
+                <a href=""><img src="{% static 'img/logo.png' %}" alt="" id="imgblue"></a>
+                <a href=""><img src="{% static 'img/logowhite.png' %}" alt="" id="imgwhite"></a>
             </div>
             <div class="nav-items">
-                <a href="#">About Us </a>
-                <a href="login">Login</a>
-                <a href="signup">Signup</a>
+                <a href="login">Log in</a>
+                <a href="signup" id="signup">Sign up</a>
             </div>
-
         </nav>
     </header>
     <section>
         <div class="user-details">
             <form class="form" method="post">
-                <h5>Registro</h5>
+                <h5>Sign up</h5>
                 {% csrf_token %}
                 {% for field in form %}
                     <div class="input-box">
@@ -39,17 +37,25 @@
                     </div>
                 {% endfor %}
                 <div class="input-box">
-                    <button type="submit" class="registerbtn">Register</button>
+                    <button type="submit" class="registerbtn">Log in</button>
                 </div>
                 
                 <div class="account-box">
-                    <p>¿Ya tienes una cuenta? <a href="login">Inicia sesión</a>.</p>
+                    <p>You already have an acount? <a href="login">Log in</a>.</p>
                 </div>
                 {% for message in messages %}
                     <div id="error">{{message}}</div></p>
                 {% endfor %}
 
             </form>
+            <script>
+                //Field Placeholder to use with DJANGO
+                var form_fields = document.getElementsByTagName('input')
+                form_fields[1].placeholder = "Introduce your username";
+                form_fields[2].placeholder = "Introduce your email";
+                form_fields[3].placeholder = "Introduce your password";
+                form_fields[4].placeholder = "Repeat your password";
+            </script>
 
 
 
