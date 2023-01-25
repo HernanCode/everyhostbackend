@@ -36,6 +36,9 @@ def loginPage(request):
         context = {}
         return render(request,'login.html',context)
 
+def error_404(request, exception):
+    return render(request, '404.html')
+
 def signupPage(request):
     if request.user.is_authenticated:
         return redirect('dashboard')
@@ -47,7 +50,7 @@ def signupPage(request):
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Cuenta ' + user + ' creada correctamente')
-                return redirect('/auth/login')
+                return redirect('login')
             else:
                 messages.info(request, 'La contraseña con cumple con la complejidad necesaria o el usuario ya esta en uso')
 
@@ -61,4 +64,5 @@ def logoutUser(request):
 @login_required(login_url='login')
 def dashboard(request):
     return render(request,'dashboard.html')
+
 

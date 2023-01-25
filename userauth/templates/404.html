@@ -1,0 +1,54 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EveryHost</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/c8a739af4d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
+    <script src="{% static 'home/js/scroll.js'%}"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/headicon.png' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{%static 'img/logo.png'%}" alt="" id="imgblue">
+                <img src="{%static 'img/logowhite.png'%}" alt="" id="imgwhite">
+            </div>
+            <div class="nav-items">
+                <a href="login">Iniciar sesión</a>
+                <a href="signup" id="signup">Registrarse</a>
+            </div>
+        </nav>
+    </header>
+    <div class="col-cn bg-blue">
+        <div class="row-cn first-block">
+            <div class="leftcloud">
+                <img src="{%static 'img/minicloudleft.svg'%}" alt="">
+            </div>
+            <div class="info">
+                <h1 id="prueba201" data-text="404">
+                    </h4>
+                    <p>La página que tratas de encontrar todavía no existe, posiblemente en algún momento exista :D</p>
+                    <script src="{%static 'home/js/writter.js'%}"></script>
+            </div>
+            <div class="rightcloud">
+                <img src="{%static 'img/minicloudright.svg'%}" alt="">
+            </div>
+        </div>
+        <div class="links">
+            <a href="../"><i class="fa-solid fa-home"></i> Volver al home</a>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

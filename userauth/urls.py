@@ -15,3 +15,4 @@ urlpatterns = [
     path("bar",views.bar, name="bar"),
     
 ]
+
