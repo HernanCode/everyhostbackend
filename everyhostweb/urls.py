@@ -21,5 +21,6 @@ from django.conf.urls import handler404, handler500
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('userauth.urls')),
+    path('dashboard', include('dashboard.urls')),
 ]
 handler404 = 'userauth.views.error_404'

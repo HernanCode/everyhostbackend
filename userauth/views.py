@@ -20,17 +20,16 @@ def bar(request):
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('dashboard')
+        return redirect('../dashboard')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')
 
             user = authenticate(request, username=username, password=password)
-            
             if user is not None:
                 login(request,user)
-                return redirect('/auth/dashboard')
+                return redirect('../dashboard')
             else:
                 messages.info(request, 'El usuario o la contraseña no son correctos')
         context = {}
@@ -41,7 +40,7 @@ def error_404(request, exception):
 
 def signupPage(request):
     if request.user.is_authenticated:
-        return redirect('dashboard')
+        return redirect('../dashboard')
     else:
         form = UserRegisterForm()
         if request.method == 'POST':
@@ -61,8 +60,5 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
-@login_required(login_url='login')
-def dashboard(request):
-    return render(request,'dashboard.html')
 
 

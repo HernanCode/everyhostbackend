@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'userauth',
+    'userauth','dashboard',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,8 @@ ROOT_URLCONF = 'everyhostweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['userauth/templates'],
+        'DIRS': ['userauth/templates',
+                 'dashboard/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,7 +114,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'userauth/media')
 MEDIA_URL = '/userauth/media/'
 
@@ -124,6 +124,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     'userauth/static/',
+    'dashboard/static/',
 ]
 
 

@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,18 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="main.js"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/headicon.png' %}">
+
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="../index.html"><img src="../assets/logo.png" alt=""></a>
+                <a href="#"><img src="{% static 'img/logo.png' %}"alt=""></a>
             </div>
             <div class="nav-items">
                 <img src="../assets/github.png" alt="">
@@ -30,21 +33,25 @@
                 <a href="#">
                     <i class="icon icon-1 ri-layout-grid-line"></i>
                 </a>
-                <a href="#">
+                <a href="form.html">
                     <i class="icon icon-2 ri-terminal-fill"></i>
                 </a>
             </div>
             <div class="sidebar-bottom-items">
-                <a href="logout">
+                {% csrf_token %}
+                <a href="{% url 'logout' %}">
                     <i class=" icon icon-3 ri-logout-box-r-line"></i>
                 </a>
+                
             </div>
         </div>
         <div class="dashboard">
+            <h1>Bienvenido {{ username }}!</h1>
+            <p>Comience creando una web en el formulario de creacion de servidores</p>
             <div class="server-parent">
                 <div class="server">
                     <div class="server-icon">
-                        <img src="../assets/firewall.svg" alt="">
+                        <img src="{% static 'img/firewall.svg'%}" alt="">
                     </div>
                     <ul class="server-details">
                         <li>Hostname:<span class="data">web.ehpages.com</span></li>
