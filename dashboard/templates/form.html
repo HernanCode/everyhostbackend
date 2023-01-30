@@ -11,9 +11,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="main.js"></script>
-    <link rel="icon" type="image/x-icon" href="{% static 'img/headicon.png' %}">
-
+    <script src="https://kit.fontawesome.com/c8a739af4d.js" crossorigin="anonymous"></script>
+</head>
 </head>
 
 <body>
@@ -23,26 +22,27 @@
                 <a href="#"><img src="{% static 'img/logo.png' %}"alt=""></a>
             </div>
             <div class="nav-items">
-                <img src="../assets/github.png" alt="">
+                <img src="../assets/github.png" alt="">{{username}}
             </div>
         </nav>
     </header>
     <section>
         <div class="sidebar">
             <div class="sidebar-top-items">
-                <a href="#">
-                    <i class="icon icon-1 ri-layout-grid-line"></i>
+                <a href="{% url 'main' %}">
+                    <i class="fa-solid fa-server"></i>
                 </a>
-                <a href="form.html">
-                    <i class="icon icon-2 ri-terminal-fill"></i>
+                <a href="{% url 'dockerForm' %}">
+                    <i class="fa-regular fa-square-plus"></i>
                 </a>
             </div>
             <div class="sidebar-bottom-items">
-                {% csrf_token %}
-                <a href="{% url 'logout' %}">
-                    <i class=" icon icon-3 ri-logout-box-r-line"></i>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
                 </a>
-                
+                <a href="{% url 'logout' %}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
             </div>
         </div>
         <div class="main">
@@ -81,7 +81,7 @@
                         {{form.dbpassword }}
                     </div>
                     <div class="input-box">
-                        <button type="submit" class="submit-btn">Register</button>
+                        <button type="submit" class="submit-btn">Create server</button>
                     </div>
                     <div id="messages">Server created succesfully</div>
                     <div id="error">Error creating a server</div>
