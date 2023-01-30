@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Docker(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     software = models.CharField(max_length=100)
-    subdomain = models.CharField(max_length=100)
+    subdomain = models.CharField(max_length=100, unique=True)
     port = models.IntegerField(null=True)
     is_active = models.BooleanField(default=False)
     repository=models.CharField(max_length=100)

@@ -342,24 +342,34 @@ section {
     display: flex;
 }
 
-#messages {
-    font-weight: 600;
-    background-color: rgb(223, 220, 220);
-    border-radius: 5px;
-    margin-top: 10px;
-    color: rgb(36, 51, 90);
-    box-shadow: rgb(46, 189, 27) 0px 0px 0px 2px;
+#succesfull{
     text-align: center;
-    padding: 10px;
+    margin: 0;
+    width: 100%;
+    padding: 7px;
+    background-color: #d0f5c7;
+    border: 1px solid #33ff00;
+    padding: 20px;
+    z-index: -1;
 }
 
-#error {
+#succesfull p{
+    color: #388820;
     font-weight: 600;
-    background-color: rgb(223, 220, 220);
-    box-shadow: rgb(255, 0, 0) 0px 0px 0px 2px;
-    border-radius: 5px;
-    margin-top: 10px;
-    color: rgb(36, 51, 90);
+}
+
+#error{
     text-align: center;
-    padding: 10px;
+    margin: 0;
+    width: 100%;
+    padding: 7px;
+    background-color: #f1d9d9;
+    border: 1px solid #ec5c5e;
+    padding: 20px;
+    z-index: -1;
+}
+
+#error p {
+    color: #cc0033;
+    font-weight: 600;
 }

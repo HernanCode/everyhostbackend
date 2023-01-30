@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import DockerForm
 import random,socket,os
+from django.db import IntegrityError
 
 @login_required(login_url='login')
 def main(request):
@@ -32,9 +33,14 @@ def dockerForm(request):
             dbadmin = form.cleaned_data['dbadmin']
             dbpassword = form.cleaned_data['dbpassword']
             user = request.user
-            docker = Docker(subdomain=subdomain, repository=repository, software=software, dbadmin=dbadmin, dbpassword=dbpassword, user=user)
-            docker.save()
-            return redirect('main')
+            try:
+                docker = Docker(subdomain=subdomain, repository=repository, software=software, dbadmin=dbadmin, dbpassword=dbpassword, user=user)
+                docker.save()
+                success = "The website was successfully created"
+                return render(request,'form.html',{'form':form,'success':success})
+            except IntegrityError:
+                    error = "Error: subdomain already exists"
+                    return render(request,'form.html',{'form':form,'error':error})
     else:
         form = DockerForm()
     return render(request,'form.html',{'form':form})

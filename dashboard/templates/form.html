@@ -83,8 +83,16 @@
                     <div class="input-box">
                         <button type="submit" class="submit-btn">Create server</button>
                     </div>
-                    <div id="messages">Server created succesfully</div>
-                    <div id="error">Error creating a server</div>
+                    {% if error %}
+                    <div id="error">
+                        <p>{{error}}</p>
+                    </div>
+                    {% endif %}
+                    {% if success %}
+                    <div id="succesfull">
+                        <p>{{success}}</p>
+                    </div>
+                    {% endif %}
                 </form>
                 <script>
                     var form_fields = document.getElementsByTagName('input')
