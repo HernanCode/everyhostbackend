@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
-
+import os
 
 
 # Create your views here.
@@ -49,6 +49,7 @@ def signupPage(request):
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Cuenta ' + user + ' creada correctamente')
+                os.makedirs(f'/home/samuel/hostingfolders/{user}')
                 return redirect('login')
             else:
                 messages.info(request, 'La contraseña con cumple con la complejidad necesaria o el usuario ya esta en uso')
