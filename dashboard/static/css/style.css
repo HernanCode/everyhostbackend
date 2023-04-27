@@ -127,7 +127,6 @@ section {
 
 .server-parent {
     height: 92vh;
-    overflow-x: hidden;
     overflow-y: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -153,7 +152,6 @@ section {
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: flex;
-    max-width: 450px;
 }
 
 .server-icon {
@@ -244,6 +242,14 @@ section {
     outline: none;
 }
 
+.delete {
+    background-color: #545765;
+}
+
+.delete:hover {
+    background-color: rgb(40, 40, 40);
+}
+
 .main {
     justify-content: center;
     width: 100%;
@@ -269,6 +275,7 @@ section {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
 }
+
 .input-box {
     margin: 10px;
 }
@@ -342,7 +349,7 @@ section {
     display: flex;
 }
 
-#succesfull{
+#succesfull {
     text-align: center;
     margin: 0;
     width: 100%;
@@ -353,12 +360,12 @@ section {
     z-index: -1;
 }
 
-#succesfull p{
+#succesfull p {
     color: #388820;
     font-weight: 600;
 }
 
-#error{
+#error {
     text-align: center;
     margin: 0;
     width: 100%;

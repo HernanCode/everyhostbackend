@@ -22,7 +22,7 @@
                 <a href="#"><img src="{% static 'img/logo.png' %}"alt=""></a>
             </div>
             <div class="nav-items">
-                <img src="../assets/github.png" alt="">{{username}}
+                <img src="{% static 'img/github.png' %}" alt="">{{username}}
             </div>
         </nav>
     </header>
@@ -32,7 +32,7 @@
                 <a href="">
                     <i class="fa-solid fa-server"></i>
                 </a>
-                <a href="server">
+                <a href="{% url 'addService' %}">
                     <i class="fa-regular fa-square-plus"></i>
                 </a>
             </div>
@@ -51,22 +51,21 @@
                 {% if checkDocker %}
                 <!--  Iterates through all items of dockerList (docker list is docker list having user id 
                     as foreign key )-->
-                {% for docker in dockerList %} 
-                <!--If docker state is True -->
-                {% if docker.is_active %}
+                {% for docker in dockerList %}
+                {% if docker.status %}
                 <div class="server">
                     <div class="flex-row">
                         <div class="server-icon">
                             <img src="{% static 'img/whitesrv.svg' %}" alt="">
                         </div>
                         <ul class="server-details">
-                            <li>Hostname:<span class="data">{{docker.subdomain}}.ehost.io</span></li>
+                            <li>Hostname:<span class="data"><a href="https://{{ docker.subdomain }}.everyhost.io" target="_blank">{{ docker.subdomain }}.everyhost.io</a></span></li>
                             <li>Status:<span class="data on">Running</span></li>
-                            <li>Port:<span class="data port">{{docker.port}}</span></li>
+                            <li>Service:<span class="data port">{{docker.software}}</span></li>
                         </ul>
                     </div>
                     <div class="control">
-                        <form action="{% url 'stopDocker' docker.id %}" method="post">
+                        <form action="{% url 'stopService' docker.software docker.id %}" method="post">
                             {% csrf_token %}
                             <button class="button-panel stop" role="button">Stop</button>
                           </form>
@@ -80,15 +79,19 @@
                             <img src="{% static 'img/whitesrv.svg' %}" alt="">
                         </div>
                         <ul class="server-details">
-                            <li>Hostname:<span class="data">{{docker.subdomain}}.ehost.io</span></li>
+                            <li>Hostname:<span class="data"><a href="https://{{ docker.subdomain }}.everyhost.io" target="_blank">{{ docker.subdomain }}.everyhost.io</a></span></li>
                             <li>Status:<span class="data off">OFFLINE</span></li>
-                            <li>Port:<span class="data port">#N/A</span></li>
+                            <li>Service:<span class="data port">{{docker.software}}</span></li>
                         </ul>
                     </div>
                     <div class="control">
-                          <form action="{% url 'startDocker' docker.id %}" method="post">
+                          <form action="{% url 'startService' docker.software docker.id %}" method="post">
                             {% csrf_token %}
                             <button class="button-panel start" role="button">Start</button>
+                          </form>
+                          <form action="{% url 'deleteService' docker.id %}" method="get">
+                            {% csrf_token %}
+                            <button class="button-panel delete" role="button"><i class="fa">&#xf014;</i></button>
                           </form>
                     </div>
 
@@ -98,7 +101,8 @@
                 <!--If user don't have dockers -->
                 {% else %}
                 <div class="server">
-                    <h1>Bienvenido {{username}}!</h1>
+                    <h1>Bienvenido al panel {{username}}! 👋</h1>
+    
                 </div>
                 {% endif %}
             </div>

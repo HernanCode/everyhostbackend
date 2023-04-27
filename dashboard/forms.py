@@ -1,9 +1,10 @@
 from django import forms
 
-class DockerForm(forms.Form):
+class ServiceForm(forms.Form):
     CHOICES = [
-        ('1', 'Javascript'),
-        ('2', 'Wordpress'),
+        ('nc', 'Nextcloud'),
+        ('wp', 'Wordpress'),
+        ('mysql', 'MySQL'),
     ]
     subdomain = forms.CharField(max_length=100)
     repository = forms.CharField(max_length=100)

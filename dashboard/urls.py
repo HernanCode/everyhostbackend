@@ -8,9 +8,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.main,name="main"),
-    path('server', views.dockerForm, name="dockerForm"),
+    path('addService', views.DeployForm, name="addService"),
     path('logout', views.userLogout, name="logout"),
-    path('stopDocker/<int:id>', views.stopDocker, name='stopDocker'),
-    path('startDocker/<int:id>', views.startDocker, name='startDocker')
+    path('stopService/<str:service>/<int:idService>', views.stopService, name='stopService'),
+    path('startService/<str:service>/<int:idService>', views.startService, name='startService'),
+    path('deleteService/<int:id>/', views.deleteService, name='deleteService')
 ]
 

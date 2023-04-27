@@ -32,7 +32,7 @@
                 <a href="{% url 'main' %}">
                     <i class="fa-solid fa-server"></i>
                 </a>
-                <a href="{% url 'dockerForm' %}">
+                <a href="{% url 'addService' %}">
                     <i class="fa-regular fa-square-plus"></i>
                 </a>
             </div>
@@ -66,6 +66,10 @@
                         <label class="server-radio">
                             <img src="{% static 'img/wordpress.svg'%}" alt="Option 2">
                             {{ form.software.1}}
+                          </label>
+                          <label class="server-radio">
+                            <img src="{% static 'img/mysql.png'%}" alt="Option 2">
+                            {{ form.software.2}}
                           </label>
                     </div>
                     <div class="input-box">
