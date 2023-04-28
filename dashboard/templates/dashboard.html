@@ -46,9 +46,12 @@
             </div>
         </div>
         <div class="dashboard">
+            <div class="main-title">
+                <h1>Bienvenido al panel {{username}}! 👋</h1>
+            </div>
+            {% if checkDocker %}
             <div class="server-parent">
                 <!--if the docker the user has Docker value is True -->
-                {% if checkDocker %}
                 <!--  Iterates through all items of dockerList (docker list is docker list having user id 
                     as foreign key )-->
                 {% for docker in dockerList %}
@@ -98,14 +101,13 @@
                 </div>
                 {% endif %}
                 {% endfor %}
-                <!--If user don't have dockers -->
-                {% else %}
-                <div class="server">
-                    <h1>Bienvenido al panel {{username}}! 👋</h1>
-    
-                </div>
-                {% endif %}
             </div>
+            {% else %}
+            <div class="main-title">
+            <h1>Centra este div👋</h1>
+            </div>
+                {% endif %}
+        </div>
         </div>
     </section>
 </body>

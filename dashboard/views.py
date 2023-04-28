@@ -171,7 +171,6 @@ def writeManifest(idUser, service, manifest, filename,idService):
         with open(filepath, "w") as file:
             file.write(manifest)
 
-
 def firstStartService(idUser,service,idService):
     if service == "mysql":
         mysqlPath = f"/mnt/nfs/k8s/client-{idUser}/{idUser}-files/mysql"
