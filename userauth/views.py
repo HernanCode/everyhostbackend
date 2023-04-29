@@ -32,7 +32,6 @@ def loginPage(request):
                 return redirect('../dashboard')
             else:
                 messages.info(request, 'El usuario o la contraseña no son correctos')
-        #context = {}
         return render(request,'login.html')
 
 def error_404(request, exception):
