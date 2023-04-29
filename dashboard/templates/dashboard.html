@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Everyhost - Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c8a739af4d.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/headicon.png' %}">
 </head>
 </head>
 
@@ -22,7 +23,7 @@
                 <a href="#"><img src="{% static 'img/logo.png' %}"alt=""></a>
             </div>
             <div class="nav-items">
-                <img src="{% static 'img/github.png' %}" alt="">{{username}}
+                <p>{{username}}</p>
             </div>
         </nav>
     </header>
@@ -47,13 +48,10 @@
         </div>
         <div class="dashboard">
             <div class="main-title">
-                <h1>Bienvenido al panel {{username}}! 👋</h1>
+                <h1>Welcome to EHSPanel, {{username}}! 👋</h1>
             </div>
             {% if checkDocker %}
             <div class="server-parent">
-                <!--if the docker the user has Docker value is True -->
-                <!--  Iterates through all items of dockerList (docker list is docker list having user id 
-                    as foreign key )-->
                 {% for docker in dockerList %}
                 {% if docker.status %}
                 <div class="server">
@@ -104,14 +102,24 @@
             </div>
             {% else %}
             <div class="main-title">
-            <h1>Centra este div👋</h1>
+            <p>To get started, please create a service using the form on the left!</p>
             </div>
                 {% endif %}
         </div>
         </div>
     </section>
 </body>
+<script>
 
+let previousTitle = document.title
+window.addEventListener('blur', () => {
+    previousTitle = document.title
+    document.title = 'Tus servicios te necesitan! 😨'
+
+})
+
+window.addEventListener('focus',() => {
+    document.title = previousTitle
+})
+</script>
 </html>
-
-    

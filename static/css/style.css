@@ -73,6 +73,7 @@ nav a {
     box-shadow: rgba(87, 87, 87, 0.4) 0px 5px;
 }
 
+
 li {
     list-style: none;
 }
@@ -346,6 +347,7 @@ section {
     box-shadow: rgb(0, 105, 255) 3px 4px 0px;
     transition: all 0.3s ease;
 }
+
 
 .select {
     justify-content: center;

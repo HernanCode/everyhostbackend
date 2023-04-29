@@ -56,13 +56,12 @@ def DeployForm(request):
         if form.is_valid():
             subdomain = form.cleaned_data['subdomain']
             software = form.cleaned_data['software']
-            repository = form.cleaned_data['repository']
             dbpassword = form.cleaned_data['dbpassword']
             user = request.user
             idUser = request.user.id
             try:
                 if software == 'mysql' and Service.objects.filter(user_id=idUser, software='mysql').exists():
-                    error = "Error: tu usuario ya tiene una base de datos"
+                    error = "You alredy has a database"
                     return render(request,'form.html',{'form':form,'error':error})
                 newService = Service(subdomain=subdomain, software=software,  dbpassword=dbpassword, user=user)
                 newService.save()
@@ -74,11 +73,11 @@ def DeployForm(request):
                     mysqlManifests(idUser,dbpassword,idDeploy)
                     phpMyAdminManifests(idUser,dbpassword,subdomain,idDeploy)
                     firstStartService(idUser,software,idDeploy)
-                success = "The website was  created"
+                success = "The service was succesfully created 🎉🎉"
                 return render(request,'form.html',{'form':form,'success':success})
             except IntegrityError as e :
                 print(e)
-                error = "Error: subdomain already exists"
+                error = "Subdomain already exists"
                 return render(request,'form.html',{'form':form,'error':error})
     else:
         form = ServiceForm()
